@@ -6,11 +6,13 @@ namespace StringExercises
     {
         static void Main(string[] args)
         {
-            string original = "VisualStudio";
+            string original = "Sator Arepo Tenet Opera Rotas";
             string reversed = Reverse(original);
+            bool isPalindrome = IsPalindrome(original);
 
             Console.WriteLine("Original=" + original);
             Console.WriteLine("Reversed=" + reversed);
+            Console.WriteLine("IsPalindrome=" + isPalindrome);
         }
 
         private static void CountVowels()
@@ -112,6 +114,13 @@ namespace StringExercises
             }
 
             return new string(reversed);
+        }
+
+        private static bool IsPalindrome(string text)
+        {
+            string reversed = Reverse(text);
+            bool isPalyndrome = string.Equals(text, reversed, StringComparison.OrdinalIgnoreCase);
+            return isPalyndrome;
         }
     }
 }
